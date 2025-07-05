@@ -1,0 +1,28 @@
+{
+  "service": {
+    "name": "Exchange Rate Widget",
+    "displayName": "Exchange Rate",
+    "description": "A widget to display and compare exchange rates",
+    "version": "1.0.0",
+    "apiVersion": "1.0",
+    "category": "productivity",
+    "supportedLanguages": ["en", "uk"]
+  },
+  "widget": {
+    "location": "crm.deals.detail.relatedlist",
+    "name": "exchange-rate-widget",
+    "displayName": "Exchange Rate Widget",
+    "description": "This widget displays the exchange rate from NBU and allows you to compare it with the deal rate.",
+    "width": "100%",
+    "height": "400px"
+  },
+  "author": {
+    "name": "Mykyta Opanasiuk",
+    "email": "nikitaopanassiuk@outlook.com"
+  },
+  "permissions": [
+    "ZohoCRM.modules.deals.READ",
+    "ZohoCRM.modules.deals.UPDATE",
+    "ZohoCRM.modules.all.READ"
+  ]
+}
