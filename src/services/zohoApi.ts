@@ -67,9 +67,6 @@ export const searchLastExchangeRate = async (
     Entity: "Exchange_Rates_History",
     Type: "criteria",
     Query: `((Deal:equals:${dealId}) and (Rate_Source:equals:${rateSource}))`,
-    SortBy: "Date",
-    SortOrder: "desc",
-    Limit: 1,
   });
 
   if (!response || !response.data || response.data.length === 0) {
@@ -87,14 +84,11 @@ export const searchLastFiveExchangeRates = async (
     Entity: "Exchange_Rates_History",
     Type: "criteria",
     Query: `((Deal:equals:${dealId}) and (Rate_Source:equals:${rateSource}))`,
-    SortBy: "Date",
-    SortOrder: "desc",
-    Limit: 5,
   });
 
   if (!response || !response.data || response.data.length === 0) {
     return null;
   }
 
-  return response.data;
+  return response.data.slice(0, 5);
 };

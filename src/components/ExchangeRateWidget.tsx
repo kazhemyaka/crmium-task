@@ -55,24 +55,25 @@ const ExchangeRateWidget: FC<ExchangeRateWidgetProps> = ({ dealId }) => {
   };
 
   const differenceInPercentage = (a: number, b: number) => {
-    if (a && b) {
-      return Math.abs(((b - a) / a) * 100);
-    }
-    return 0;
+    if (a === 0) return 0; // або можливо: return Infinity або NaN
+    return Math.abs(((b - a) / a) * 100);
   };
 
   const diffPercentageNbuDeal = differenceInPercentage(
-    nbuRate || 0,
-    dealRate || 0
+    dealRate || 0,
+    nbuRate || 0
   );
   const roundedDiffNbuDeal = Math.round(diffPercentageNbuDeal * 10) / 10;
   const isHighDifference = roundedDiffNbuDeal >= 5;
 
   const diffPercentageLastRate = differenceInPercentage(
-    nbuRate || 0,
-    lastRate || 0
+    lastRate || 0,
+    nbuRate || 0
   );
   const roundedDiffLastRate = Math.round(diffPercentageLastRate * 10) / 10;
+  console.log(nbuRate);
+  console.log(lastRate);
+  console.log("Last rate difference percentage:", roundedDiffLastRate);
 
   const handleUpdateDealRate = async () => {
     if (nbuRate && dealId) {
