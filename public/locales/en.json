@@ -5,5 +5,7 @@
   "update_deal_rate": "Update Deal Rate",
   "load_error": "Failed to load data. Please try again later.",
   "update_error": "Failed to update deal rate. Please try again later.",
-  "loading": "Loading..."
+  "loading": "Loading...",
+  "date": "Date",
+  "rate": "Rate"
 }

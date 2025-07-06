@@ -3,7 +3,7 @@ import Container from "./Container";
 
 interface DifferenceProps {
   label: string;
-  differenceInPercentage: () => number;
+  differenceInPercentage: number;
   isHighDifference: boolean;
 }
 
@@ -13,14 +13,14 @@ const Difference: FC<DifferenceProps> = ({
   differenceInPercentage,
 }) => {
   return (
-    <Container className="bg-gray-100 rounded-lg shadow-md mb-4">
+    <Container className="bg-gray-100 rounded-lg shadow-md">
       <p>{label}</p>
       <p
         className={`text-2xl font-bold ${
           isHighDifference ? "text-red-500" : "text-green-500"
         }`}
       >
-        {differenceInPercentage().toFixed(1)}%
+        {differenceInPercentage.toFixed(1)}%
       </p>
     </Container>
   );
