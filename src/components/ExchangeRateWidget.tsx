@@ -55,7 +55,7 @@ const ExchangeRateWidget: FC<ExchangeRateWidgetProps> = ({ dealId }) => {
   };
 
   const differenceInPercentage = (a: number, b: number) => {
-    if (a === 0) return 0; // або можливо: return Infinity або NaN
+    if (a === 0) return 0;
     return Math.abs(((b - a) / a) * 100);
   };
 
@@ -71,9 +71,6 @@ const ExchangeRateWidget: FC<ExchangeRateWidgetProps> = ({ dealId }) => {
     nbuRate || 0
   );
   const roundedDiffLastRate = Math.round(diffPercentageLastRate * 10) / 10;
-  console.log(nbuRate);
-  console.log(lastRate);
-  console.log("Last rate difference percentage:", roundedDiffLastRate);
 
   const handleUpdateDealRate = async () => {
     if (nbuRate && dealId) {
